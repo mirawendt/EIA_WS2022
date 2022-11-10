@@ -1,0 +1,106 @@
+header {
+    background: url(foto1_big\ Kopie.jpg);
+    height: 400px;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: right;
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+    animation: smoke;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+    animation-play-state: running;
+    padding-top: 20px;
+   
+}
+
+a {
+    text-decoration: none;
+    color: white;
+
+}
+
+.is-active{
+    text-decoration: underline;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 70px;
+    margin-right: 70px;
+    padding-bottom: 20px;
+}
+
+* {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+body{
+    margin:0;
+}
+
+input{
+background-color: rgb(85, 84, 84);
+color: white;
+}
+
+.img{
+    padding:50px;
+    transition: transform .3s;
+    width:200px;
+    margin: 0 auto;
+    opacity: .7;
+  
+}
+.img:hover{
+    transform: scale(1.1);
+    visibility: visible;
+    opacity: 1;
+    transition:  .3s linear;
+}
+
+.link{
+    opacity: .7;
+}
+
+.link:hover{
+    opacity: 1;
+    transition: .3 linear;
+}
+
+
+@keyframes smoke {
+    50% {background-image: url(wald.jpeg)}
+    100% {background-image: url(foto1_big Kopie.jpg)}
+}
+
+.banner{
+position: fixed;
+top: 0;
+right: 0;
+transform: rotateZ(45deg);
+background-color: white; 
+
+color: red;
+}
+
+.logo{
+    margin-left: 70px;
+
+}
+
+.websites{
+    margin-right: 70px;
+}
+.content{
+    margin-left: 70px;
+    margin-right: 70px;
+}
