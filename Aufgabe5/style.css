@@ -84,12 +84,13 @@ color: white;
 
 .banner{
 position: fixed;
-top: 80px;
-right: -30px;
+top: 65px;
+right: -100px;
 transform: rotateZ(45deg);
-background-color: white;
-padding: 5px; 
-color: red;
+background-color: rgb(149, 4, 4);
+padding-right: 80px; 
+padding-left: 80px;
+color: white;
 }
 
 .logo{
@@ -103,4 +104,13 @@ color: red;
 .content{
     margin-left: 300px;
     margin-right: 300px;
+}
+
+*{
+    font-family: myownfont;
+}
+
+@font-face {
+    font-family: myownfont;
+    src: url(./Source_Sans_Pro/SourceSansPro-Light.ttf);
 }
