@@ -35,8 +35,8 @@ a:hover {
 footer {
     display: flex;
     justify-content: space-between;
-    margin-left: 70px;
-    margin-right: 70px;
+    margin-left: 300px;
+    margin-right: 300px;
     padding-bottom: 20px;
 }
 
@@ -84,23 +84,23 @@ color: white;
 
 .banner{
 position: fixed;
-top: 0;
-right: 0;
+top: 80px;
+right: -30px;
 transform: rotateZ(45deg);
-background-color: white; 
-
+background-color: white;
+padding: 5px; 
 color: red;
 }
 
 .logo{
-    margin-left: 70px;
+    margin-left: 300px;
 
 }
 
 .websites{
-    margin-right: 70px;
+    margin-right: 300px;
 }
 .content{
-    margin-left: 70px;
-    margin-right: 70px;
+    margin-left: 300px;
+    margin-right: 300px;
 }
