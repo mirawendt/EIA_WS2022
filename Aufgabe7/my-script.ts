@@ -32,15 +32,15 @@ window.addEventListener('load', function () {
 
     const chart = document.querySelector(".chart") as HTMLDivElement
 
-    function calc(thisPop2020,thisPop2022,thisNumber,thisPercent,name) {
+    function calc(thisPop2020, thisPop2022, thisNumber, thisPercent, name) {
         document.querySelector(".population").innerHTML = (thisPop2022 / 1000000).toFixed(2) + "Mio";
-        document.querySelector(".populationtext").innerHTML = "Gesamtzahl Einwohnerinnen und Einwohner in " +name+ " in 2022";
-        document.querySelector (".percent").innerHTML = thisPercent.toFixed(2) + "%"
+        document.querySelector(".populationtext").innerHTML = "Gesamtzahl Einwohnerinnen und Einwohner in " + name + " in 2022";
+        document.querySelector(".percent").innerHTML = thisPercent.toFixed(2) + "%"
         document.querySelector(".pop2020").innerHTML = (thisPop2020 / 1000000).toFixed(2) + "Mio";
-        document.querySelector(".pop2020text").innerHTML = "Gesamtzahl Einwohnerinnen und Einwohner in " +name+ " in 2020";
+        document.querySelector(".pop2020text").innerHTML = "Gesamtzahl Einwohnerinnen und Einwohner in " + name + " in 2020";
         document.querySelector(".thenumber").innerHTML = (thisNumber / 1000).toFixed(2) + "Tsd";
-        document.querySelector(".headline").innerHTML = "Einwohnerzahl in " +name;
-        document.querySelector(".chart").setAttribute("style","height:" + ((1 - thisPop2022 / population2022) * 100) + "%;")
+        document.querySelector(".headline").innerHTML = "Einwohnerzahl in " + name;
+        document.querySelector(".chart").setAttribute("style", "height:" + ((1 - thisPop2022 / population2022) * 100) + "%;")
     }
 
 
@@ -68,7 +68,7 @@ window.addEventListener('load', function () {
 
 
 
-    
+
 
 
     console.log("In " + germany + " beträgt die aktuelle Einwohnerzahl " + population2022DE);
