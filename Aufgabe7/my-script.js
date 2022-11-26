@@ -3,6 +3,7 @@ window.addEventListener('load', function () {
     const italy = "Italien";
     const france = "Frankeich";
     const spain = "Spanien";
+    const eu = "der europäischen Union";
     const population2022DE = 83803014;
     const population2020DE = 83651225;
     const population2022IT = 60629462;
@@ -30,7 +31,7 @@ window.addEventListener('load', function () {
         document.querySelector(".percent").innerHTML = thisPercent.toFixed(2) + "%";
         document.querySelector(".pop2020").innerHTML = (thisPop2020 / 1000000).toFixed(2) + "Mio";
         document.querySelector(".pop2020text").innerHTML = "Gesamtzahl Einwohnerinnen und Einwohner in " + name + " in 2020";
-        document.querySelector(".thenumber").innerHTML = (thisNumber / 1000000).toFixed(2) + "Mio";
+        document.querySelector(".thenumber").innerHTML = (thisNumber / 1000).toFixed(2) + "Tsd";
         document.querySelector(".headline").innerHTML = "Einwohnerzahl in " + name;
         document.querySelector(".chart").setAttribute("style", "height:" + ((1 - thisPop2022 / population2022) * 100) + "%;");
     }
@@ -45,6 +46,9 @@ window.addEventListener('load', function () {
     });
     document.querySelector(".spain").addEventListener("click", function () {
         calc(population2020SP, population2022SP, numberSP, ProzentSP, spain);
+    });
+    document.querySelector(".stars").addEventListener("click", function () {
+        calc(population2020, population2022, number, Prozent, eu);
     });
     console.log("In " + germany + " beträgt die aktuelle Einwohnerzahl " + population2022DE);
     console.log("In " + germany + " betrug die Einwohnerzahl 2020 " + population2020DE);
