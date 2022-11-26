@@ -45,49 +45,23 @@ window.addEventListener('load', function () {
 
 
     document.querySelector(".france").addEventListener("click", function () {
-        calc(population2020FR, population2022FR, numberFR, ProzentFR,france)
-    })
-
-
-    document.querySelector(".italy").addEventListener("click", function () {
-        document.querySelector(".population").innerHTML = (population2022IT / 1000000).toFixed(2) + "Mio";
-        document.querySelector(".populationtext").innerHTML = "Gesamtzahl Einwohnerinnen und Einwohner in Italien in 2022";
-        document.querySelector(".percent").innerHTML = ProzentIT.toFixed(2) + "%";
-        document.querySelector(".pop2020").innerHTML = (population2020IT / 1000000).toFixed(2) + "Mio";
-        document.querySelector(".pop2020text").innerHTML = "Gesamtzahl Einwohnerinnen und Einwohner in Italien in 2020";
-        document.querySelector(".thenumber").innerHTML = (numberIT.toFixed() + "Mio";
-        document.querySelector(".headline").innerHTML = "Einwohnerzahl in Italien";
-    })
-    document.querySelector(".stars").addEventListener("click", function () {
-        document.querySelector(".population").innerHTML = population2022.toString() + "Mio";
-        document.querySelector(".populationtext").innerHTML = "Gesamtzahl Einwohnerinnen und Einwohner in der EU in 2022";
-        document.querySelector(".percent").innerHTML = Prozent.toFixed(2) + "%";
-        document.querySelector(".pop2020").innerHTML = population2020.toString() + "Mio";
-        document.querySelector(".pop2020text").innerHTML = "Gesamtzahl Einwohnerinnen und Einwohner in der EU in 2020";
-        document.querySelector(".thenumber").innerHTML = number.toString() + "Mio";
-        document.querySelector(".headline").innerHTML = "Einwohnerzahl in der europäischen Union";
+        calc(population2020FR, population2022FR, numberFR, ProzentFR, france)
     })
 
     document.querySelector(".germany").addEventListener("click", function () {
-        document.querySelector(".population").innerHTML = (population2022DE / 1000000).toFixed(2) + "Mio";
-        document.querySelector(".populationtext").innerHTML = "Gesamtzahl Einwohnerinnen und Einwohner in Deutschland in 2022";
-        document.querySelector(".percent").innerHTML = ProzentD.toFixed(2) + "%";
-        document.querySelector(".pop2020").innerHTML = (population2020DE / 1000000).toFixed(2) + "Mio";
-        document.querySelector(".pop2020text").innerHTML = "Gesamtzahl Einwohnerinnen und Einwohner in Deutschland in 2020";
-        document.querySelector(".thenumber").innerHTML = numberDE.toString() + "Mio";
-        document.querySelector(".headline").innerHTML = "Einwohnerzahl in Deutschland";
+        calc(population2020DE, population2022DE, numberDE, ProzentD, germany)
     })
 
+    document.querySelector(".italy").addEventListener("click", function () {
+        calc(population2020IT, population2022IT, numberIT, ProzentIT, italy)
+    })
 
     document.querySelector(".spain").addEventListener("click", function () {
-        document.querySelector(".population").innerHTML = (population2022SP / 1000000).toFixed(2) + "Mio";
-        document.querySelector(".populationtext").innerHTML = "Gesamtzahl Einwohnerinnen und Einwohner in Spanien in 2022";
-        document.querySelector(".percent").innerHTML = ProzentSP.toFixed(2) + "%";
-        document.querySelector(".pop2020").innerHTML = (population2020SP / 1000000).toFixed(2) + "Mio";
-        document.querySelector(".pop2020text").innerHTML = "Gesamtzahl Einwohnerinnen und Einwohner in Spanien in 2020";
-        document.querySelector(".thenumber").innerHTML = numberSP.toString() + "Mio";
-        document.querySelector(".headline").innerHTML = "Einwohnerzahl in Spanien";
+        calc(population2020SP, population2022SP, numberSP, ProzentSP, spain)
     })
+
+
+    
 
 
     console.log("In " + germany + " beträgt die aktuelle Einwohnerzahl " + population2022DE);
