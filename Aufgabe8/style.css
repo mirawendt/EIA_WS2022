@@ -51,7 +51,7 @@ h1 {
   border: 2px solid #ffffff; 
 }
 
-.play-btn {
+.playBtn {
     width: 100px;
     height: 100px;
     border-radius: 50%;
@@ -61,7 +61,7 @@ h1 {
   }
   
   /* triangle */
-  .play-btn::after {
+  .playBtn::after {
     content: "";
     position: absolute;
     left: 50%;

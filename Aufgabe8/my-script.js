@@ -37,4 +37,16 @@ document.querySelector(".pad-8").addEventListener("click", function () {
 document.querySelector(".pad-9").addEventListener("click", function () {
     playSample(sound9);
 });
+let audio = new Audio(), i = 0;
+let playlist = new Array('./DrumPad/kick.mp3', './DrumPad/snare.mp3', './DrumPad/hihat.mp3');
+document.querySelector(".playBtn").addEventListener('ended', function () {
+    i = ++i < playlist.length ? i : 0;
+    console.log(i);
+    audio.src = playlist[i];
+    audio.play();
+}, true);
+audio.volume = 0.3;
+audio.loop = false;
+audio.src = playlist[0];
+//index
 //# sourceMappingURL=my-script.js.map
