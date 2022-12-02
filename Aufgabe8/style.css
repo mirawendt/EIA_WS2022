@@ -51,31 +51,29 @@ h1 {
   border: 2px solid #ffffff; 
 }
 
-.playBtn {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    position: relative;
-    display: block;
-    margin: 100px auto;
-  }
-  
-  /* triangle */
-  .playBtn::after {
-    content: "";
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    -webkit-transform: translateX(-40%) translateY(-50%);
-    transform: translateX(-40%) translateY(-50%);
-    transform-origin: center center;
-    width: 0;
-    height: 0;
-    border-top: 15px solid transparent;
-    border-bottom: 15px solid transparent;
-    border-left: 25px solid #fff;
-    z-index: 100;
-    -webkit-transition: all 400ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
-    transition: all 400ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
-  }
-  
+#play-button-container {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+.play-button {
+  display: inline-block;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: #fff;
+  transition: clip-path .3s ease;
+}
+.play-button-before {
+  clip-path: polygon(0 0, 50% 25%, 50% 75%, 0% 100%);
+}
+.play-button-after {
+  clip-path: polygon(50% 25%, 100% 50%, 100% 50%, 50% 75%);
+}
+#play-button-container:hover .play-button-before {
+  clip-path: polygon(0 0, 30% 0, 30% 100%, 0% 100%);
+}
+#play-button-container:hover .play-button-after{
+  clip-path: polygon(70% 0, 100% 0, 100% 100%, 70% 100%)
+}

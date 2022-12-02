@@ -1,16 +1,16 @@
-const sound1: HTMLAudioElement = new Audio ('./DrumPad/A.mp3'); 
-const sound2:HTMLAudioElement = new Audio ('./DrumPad/C.mp3'); 
-const sound3:HTMLAudioElement = new Audio ('./DrumPad/F.mp3'); 
-const sound4:HTMLAudioElement = new Audio ('./Drumpad/G.mp3'); 
-const sound5:HTMLAudioElement = new Audio ('./DrumPad/hihat.mp3'); 
-const sound6:HTMLAudioElement = new Audio ('./DrumPad/kick.mp3'); 
-const sound7:HTMLAudioElement = new Audio ('./DrumPad/laugh-1.mp3');
-const sound8:HTMLAudioElement = new Audio ('./DrumPad/laugh-2.mp3'); 
-const sound9:HTMLAudioElement = new Audio ('./DrumPad/snare.mp3'); 
+const sound1: HTMLAudioElement = new Audio('./DrumPad/A.mp3');
+const sound2: HTMLAudioElement = new Audio('./DrumPad/C.mp3');
+const sound3: HTMLAudioElement = new Audio('./DrumPad/F.mp3');
+const sound4: HTMLAudioElement = new Audio('./Drumpad/G.mp3');
+const sound5: HTMLAudioElement = new Audio('./DrumPad/hihat.mp3');
+const sound6: HTMLAudioElement = new Audio('./DrumPad/kick.mp3');
+const sound7: HTMLAudioElement = new Audio('./DrumPad/laugh-1.mp3');
+const sound8: HTMLAudioElement = new Audio('./DrumPad/laugh-2.mp3');
+const sound9: HTMLAudioElement = new Audio('./DrumPad/snare.mp3');
 
 
 function playSample(sound) {
-   sound.play()
+    sound.play()
 }
 
 document.querySelector(".pad-1").addEventListener("click", function () {
@@ -41,18 +41,21 @@ document.querySelector(".pad-9").addEventListener("click", function () {
     playSample(sound9)
 })
 
-let audio = new Audio(),
-    i = 0;
-let playlist = new Array('./DrumPad/kick.mp3', './DrumPad/snare.mp3', './DrumPad/hihat.mp3');
 
-document.querySelector(".playBtn").addEventListener('ended', function () {
-    i = ++i < playlist.length ? i : 0;
-    console.log(i)
-    audio.src = playlist[i];
-    audio.play();
-}, true);
-audio.volume = 0.3;
-audio.loop = false;
-audio.src = playlist[0];
+function playB(play) {
 
-//index
+}
+
+document.querySelector(".play-button-container").addEventListener("click", function () {
+    playB(sound6)
+})
+
+const play = [sound6, sound5, sound9];
+let index = 0;
+
+const loop = setInterval(() => { {
+        clearInterval(loop)
+    }
+    console.log(play[index++])
+}, 500);
+
