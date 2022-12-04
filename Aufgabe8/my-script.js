@@ -37,16 +37,20 @@ document.querySelector(".pad-8").addEventListener("click", function () {
 document.querySelector(".pad-9").addEventListener("click", function () {
     playSample(sound9);
 });
-let audio = new Audio(), i = 0;
-let playlist = new Array('./DrumPad/kick.mp3', './DrumPad/snare.mp3', './DrumPad/hihat.mp3');
-document.querySelector(".playBtn").addEventListener('ended', function () {
-    i = ++i < playlist.length ? i : 0;
-    console.log(i);
-    audio.src = playlist[i];
-    audio.play();
-}, true);
-audio.volume = 0.3;
-audio.loop = false;
-audio.src = playlist[0];
-//index
+var beat = [("./DrumPad/kick.mp3"), ("./DrumPad/hihat.mp3"), ("./DrumPad/snare.mp3")];
+var zaehler = 0;
+document.querySelector(".play-button-container").addEventListener("load", playSample);
+function playThis(soundQuelle) {
+    var sound = new Audio(soundQuelle);
+    sound.play();
+}
+function playBeat() {
+    setInterval(function () {
+        playThis(beat[zaehler]);
+        zaehler++;
+        if (zaehler === 3) {
+            zaehler = 0;
+        }
+    }, 500);
+}
 //# sourceMappingURL=my-script.js.map
