@@ -49,7 +49,9 @@ var beat: string [] = [("./DrumPad/kick.mp3"), ("./DrumPad/hihat.mp3"), ("./Drum
 var zaehler: number = 0;
 
 
-document.querySelector("#play-button-container").addEventListener("click", playSample);
+document.querySelector("#play-button-container").addEventListener("click", function (){
+playBeat()
+})
 
 function playThis(soundQuelle: string) : void {
     var sound: HTMLAudioElement = new Audio (soundQuelle);
@@ -58,6 +60,7 @@ function playThis(soundQuelle: string) : void {
     function playBeat(): void {
      setInterval(function (): void {
         playThis (beat[zaehler]);
+        console.log ("test");
         zaehler ++;
         if (zaehler === 3) {
             zaehler = 0;

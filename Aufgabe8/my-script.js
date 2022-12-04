@@ -39,13 +39,16 @@ document.querySelector(".pad-9").addEventListener("click", function () {
 });
 var beat = [("./DrumPad/kick.mp3"), ("./DrumPad/hihat.mp3"), ("./DrumPad/snare.mp3")];
 var zaehler = 0;
-document.querySelector("#play-button-container").addEventListener("click", playSample);
+document.querySelector("#play-button-container").addEventListener("click", function () {
+    playBeat();
+});
 function playThis(soundQuelle) {
     var sound = new Audio(soundQuelle);
 }
 function playBeat() {
     setInterval(function () {
         playThis(beat[zaehler]);
+        console.log("test");
         zaehler++;
         if (zaehler === 3) {
             zaehler = 0;
