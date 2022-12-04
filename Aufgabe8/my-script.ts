@@ -10,7 +10,8 @@ const sound9: HTMLAudioElement = new Audio('./DrumPad/snare.mp3');
 
 
 function playSample(sound) {
-    sound.play()
+
+  
 }
 
 document.querySelector(".pad-1").addEventListener("click", function () {
@@ -48,7 +49,7 @@ var beat: string [] = [("./DrumPad/kick.mp3"), ("./DrumPad/hihat.mp3"), ("./Drum
 var zaehler: number = 0;
 
 
-document.querySelector(".play-button-container").addEventListener("load", playSample);
+document.querySelector("#play-button-container").addEventListener("click", playSample);
 
 function playThis(soundQuelle: string) : void {
     var sound: HTMLAudioElement = new Audio (soundQuelle);
