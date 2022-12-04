@@ -43,7 +43,8 @@ document.querySelector("#play-button-container").addEventListener("click", funct
     playBeat();
 });
 function playThis(soundQuelle) {
-    var sound = new Audio(soundQuelle);
+    const sound = new Audio(soundQuelle);
+    sound.play();
 }
 function playBeat() {
     setInterval(function () {
