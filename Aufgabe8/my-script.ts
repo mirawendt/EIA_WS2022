@@ -10,8 +10,8 @@ const sound9: HTMLAudioElement = new Audio('./DrumPad/snare.mp3');
 
 
 function playSample(sound) {
-
-  
+    
+    sound.play()
 }
 
 document.querySelector(".pad-1").addEventListener("click", function () {
@@ -53,7 +53,6 @@ document.querySelector("#play-button-container").addEventListener("click", playS
 
 function playThis(soundQuelle: string) : void {
     var sound: HTMLAudioElement = new Audio (soundQuelle);
-    sound.play ();
 }
     
     function playBeat(): void {

@@ -8,6 +8,7 @@ const sound7 = new Audio('./DrumPad/laugh-1.mp3');
 const sound8 = new Audio('./DrumPad/laugh-2.mp3');
 const sound9 = new Audio('./DrumPad/snare.mp3');
 function playSample(sound) {
+    sound.play();
 }
 document.querySelector(".pad-1").addEventListener("click", function () {
     playSample(sound1);
@@ -41,7 +42,6 @@ var zaehler = 0;
 document.querySelector("#play-button-container").addEventListener("click", playSample);
 function playThis(soundQuelle) {
     var sound = new Audio(soundQuelle);
-    sound.play();
 }
 function playBeat() {
     setInterval(function () {
