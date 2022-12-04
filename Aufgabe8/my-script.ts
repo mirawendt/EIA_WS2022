@@ -42,20 +42,30 @@ document.querySelector(".pad-9").addEventListener("click", function () {
 })
 
 
-function playB(play) {
 
+var beat: string [] = [("./DrumPad/kick.mp3"), ("./DrumPad/hihat.mp3"), ("./DrumPad/snare.mp3")]
+
+var zaehler: number = 0;
+
+
+document.querySelector(".play-button-container").addEventListener("load", playSample);
+
+function playThis(soundQuelle: string) : void {
+    var sound: HTMLAudioElement = new Audio (soundQuelle);
+    sound.play ();
 }
-
-document.querySelector(".play-button-container").addEventListener("click", function () {
-    playB(sound6)
-})
-
-const play = [sound6, sound5, sound9];
-let index = 0;
-
-const loop = setInterval(() => { {
-        clearInterval(loop)
+    
+    function playBeat(): void {
+     setInterval(function (): void {
+        playThis (beat[zaehler]);
+        zaehler ++;
+        if (zaehler === 3) {
+            zaehler = 0;
+        }
+    }, 500);    
     }
-    console.log(play[index++])
-}, 500);
+   
+
+
+
 
