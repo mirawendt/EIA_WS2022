@@ -66,25 +66,32 @@ var Aufgabe9;
             }
         }, 500);
     }
-    //Zum Verständnis (für mich)
-    //let myArray []
-    //const myArray= []
-    //const number = math.random...
-    //for (i=0, i<4,i++){
-    //    const number= Mathrandom...
-    //    myArray-push (number);
-    //    (code ausführen)
-    //}
-    //myArray (3,2,1)
-    //variable setInterval geben, setIntervall namen geben, mit clearIntervall setIntervall ansprechen
-    //classList.add ()
-    //fügt der ClassList eine neue Klasse hinzu
-    //classList.remove ()
-    //entfernt eine Klasse aus der classList, ohne die übrigen Klassen zu beeinflussen.
-    //mit hidden arbeiten
-    //classList.toggle ()
-    //toggelt eine Klasse in die classList bzw. hinaus. Beim ersten Aufruf wird die Klasse eingeschaltet, beim zweiten Aufruf wird die Klasse entfernt.
-    //classList.length
-    //gibt die Zahl der Klassen in der classList an
+    let myArray = [(sound5), (sound6), (sound9)];
+    document.querySelector(".fa-microphone").addEventListener("click", function () {
+        for (var i = 0; i < 4; i++) {
+            const number = Math.random;
+            myArray - push(number);
+        }
+    });
 })(Aufgabe9 || (Aufgabe9 = {}));
+//Zum Verständnis (für mich)
+//let myArray []
+//const myArray= []
+//const number = math.random...
+//for (i=0, i<4,i++){
+//    const number= Mathrandom...
+//    myArray-push (number);
+//    (code ausführen)
+//}
+//myArray (3,2,1)
+//variable setInterval geben, setIntervall namen geben, mit clearIntervall setIntervall ansprechen
+//classList.add ()
+//fügt der ClassList eine neue Klasse hinzu
+//classList.remove ()
+//entfernt eine Klasse aus der classList, ohne die übrigen Klassen zu beeinflussen.
+//mit hidden arbeiten
+//classList.toggle ()
+//toggelt eine Klasse in die classList bzw. hinaus. Beim ersten Aufruf wird die Klasse eingeschaltet, beim zweiten Aufruf wird die Klasse entfernt.
+//classList.length
+//gibt die Zahl der Klassen in der classList an
 //# sourceMappingURL=my-script.js.map
