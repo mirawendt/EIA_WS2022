@@ -81,14 +81,14 @@ namespace Aufgabe9 {
 
 
 
-    
+
     let myArray = [(sound5), (sound6), (sound9)]
 
     document.querySelector(".fa-microphone").addEventListener("click", function () {
 
         for (var i = 0; i < 4; i++) {
             const number = Math.random;
-            myArray - push(number);
+            myArray.push(number);
         }
 
     })
@@ -115,7 +115,7 @@ namespace Aufgabe9 {
 //const number = math.random...
 //for (i=0, i<4,i++){
 //    const number= Mathrandom...
-//    myArray-push (number);
+//    myArray.push (number);
 //    (code ausführen)
 //}
 //myArray (3,2,1)
