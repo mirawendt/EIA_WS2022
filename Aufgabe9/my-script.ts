@@ -76,8 +76,12 @@ namespace Aufgabe9 {
             if (zaehler === 3) {
                 zaehler = 0;
             }
-        }, 500);
+        }, 500);  
+       
+
     }
+
+ 
 
 
 
@@ -85,19 +89,16 @@ namespace Aufgabe9 {
     let myArray = [(sound5), (sound6), (sound9)]
 
     document.querySelector(".fa-microphone").addEventListener("click", function () {
-
-        for (var i = 0; i < 4; i++) {
-            const number = Math.random;
-            myArray.push(number);
+        
+       for (var i = 0; i < 4; i++) {
+            let number: number = Math.random ();
+            (console.log (myArray))
+            myArray.push (myArray [number]);
         }
-
     })
 
 
-
 }
-
-
 
 
 

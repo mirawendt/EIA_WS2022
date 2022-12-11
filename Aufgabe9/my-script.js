@@ -69,8 +69,9 @@ var Aufgabe9;
     let myArray = [(sound5), (sound6), (sound9)];
     document.querySelector(".fa-microphone").addEventListener("click", function () {
         for (var i = 0; i < 4; i++) {
-            const number = Math.random;
-            myArray.push(number);
+            let number = Math.random();
+            (console.log(myArray));
+            myArray.push(myArray[number]);
         }
     });
 })(Aufgabe9 || (Aufgabe9 = {}));
