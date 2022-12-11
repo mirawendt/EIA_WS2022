@@ -10,6 +10,46 @@ var Aufgabe9;
     const sound8 = new Audio('./DrumPad/laugh-2.mp3');
     const sound9 = new Audio('./DrumPad/snare.mp3');
     let intervall;
+    var playing = false;
+    var beat = [("./DrumPad/kick.mp3"), ("./DrumPad/hihat.mp3"), ("./DrumPad/snare.mp3")];
+    var alleToene = [
+        "./DrumPad/A.mp3",
+        "./DrumPad/C.mp3",
+        "./DrumPad/F.mp3",
+        "./Drumpad/G.mp3",
+        "./DrumPad/hihat.mp3",
+        "./DrumPad/kick.mp3",
+        "./DrumPad/laugh-1.mp3",
+        "./DrumPad/laugh-2.mp3",
+        "./DrumPad/snare.mp3",
+    ];
+    var zaehler = 0;
+    var intervallId;
+    function remix() {
+        playing = true;
+        var zaehler = 0;
+        var toeneTotal = 3;
+        let i = 0;
+        while (i < toeneTotal) {
+            var item = alleToene[Math.floor(Math.random() * alleToene.length)];
+            alleToene.push(item);
+            i = i + 1;
+        }
+    }
+    function playThis(soundQuelle) {
+        const sound = new Audio(soundQuelle);
+        sound.play();
+    }
+    function playBeat() {
+        intervall = setInterval(function () {
+            playThis(beat[zaehler]);
+            console.log("test");
+            zaehler++;
+            if (zaehler === 3) {
+                zaehler = 0;
+            }
+        }, 500);
+    }
     function playSample(sound) {
         sound.play();
     }
@@ -40,8 +80,6 @@ var Aufgabe9;
     document.querySelector(".pad-9").addEventListener("click", function () {
         playSample(sound9);
     });
-    var beat = [("./DrumPad/kick.mp3"), ("./DrumPad/hihat.mp3"), ("./DrumPad/snare.mp3")];
-    var zaehler = 0;
     document.querySelector(".fa-play").addEventListener("click", function () {
         playBeat();
         document.querySelector('.fa-stop').classList.remove('hidden');
@@ -52,47 +90,6 @@ var Aufgabe9;
         document.querySelector('.fa-stop').classList.add('hidden');
         clearInterval(intervall);
     });
-    function playThis(soundQuelle) {
-        const sound = new Audio(soundQuelle);
-        sound.play();
-    }
-    function playBeat() {
-        intervall = setInterval(function () {
-            playThis(beat[zaehler]);
-            console.log("test");
-            zaehler++;
-            if (zaehler === 3) {
-                zaehler = 0;
-            }
-        }, 500);
-    }
-    let myArray = [(sound5), (sound6), (sound9)];
-    document.querySelector(".fa-microphone").addEventListener("click", function () {
-        for (var i = 0; i < 4; i++) {
-            let number = Math.random();
-            (console.log(myArray));
-            myArray.push(myArray[number]);
-        }
-    });
+    document.querySelector(".fa-microphone").addEventListener("click", function () { remix(); });
 })(Aufgabe9 || (Aufgabe9 = {}));
-//Zum Verständnis (für mich)
-//let myArray []
-//const myArray= []
-//const number = math.random...
-//for (i=0, i<4,i++){
-//    const number= Mathrandom...
-//    myArray.push (number);
-//    (code ausführen)
-//}
-//myArray (3,2,1)
-//variable setInterval geben, setIntervall namen geben, mit clearIntervall setIntervall ansprechen
-//classList.add ()
-//fügt der ClassList eine neue Klasse hinzu
-//classList.remove ()
-//entfernt eine Klasse aus der classList, ohne die übrigen Klassen zu beeinflussen.
-//mit hidden arbeiten
-//classList.toggle ()
-//toggelt eine Klasse in die classList bzw. hinaus. Beim ersten Aufruf wird die Klasse eingeschaltet, beim zweiten Aufruf wird die Klasse entfernt.
-//classList.length
-//gibt die Zahl der Klassen in der classList an
 //# sourceMappingURL=my-script.js.map
