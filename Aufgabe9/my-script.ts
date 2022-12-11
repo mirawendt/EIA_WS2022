@@ -11,11 +11,83 @@ namespace Aufgabe9 {
     const sound9: HTMLAudioElement = new Audio('./DrumPad/snare.mp3');
     let intervall;
 
+
+
+    var playing: boolean = false;
+    var beat: string[] = [("./DrumPad/kick.mp3"), ("./DrumPad/hihat.mp3"), ("./DrumPad/snare.mp3")]
+    var alleToene: string[] = [
+        "./DrumPad/A.mp3",
+        "./DrumPad/C.mp3",
+        "./DrumPad/F.mp3",
+        "./Drumpad/G.mp3",
+        "./DrumPad/hihat.mp3",
+        "./DrumPad/kick.mp3",
+        "./DrumPad/laugh-1.mp3",
+        "./DrumPad/laugh-2.mp3",
+        "./DrumPad/snare.mp3",
+    ]
+    var zaehler: number = 0;
+    var intervallId: number;
+   
+  
+    function remix(): void {
+        playing = true;
+        var zaehler: number = 0;
+        var toeneTotal: number = 3;
+        let i: number = 0;
+        while (i < toeneTotal) {
+            var item: string = alleToene[Math.floor(Math.random() * alleToene.length)];
+            alleToene.push(item);
+            i = i + 1;
+        }
+    }
+
+    function mixer(): void{
+        if (document.querySelector(".fa-microphone").classList.contains("fa-play")){
+            document.querySelector(".fa-microphone").classList.add("fa-stop");
+            document.querySelector(".fa-microphone").classList.remove("fa-play");
+        }
+        else {
+            document.querySelector(".fa-microphone").classList.remove("fa-stop");
+            document.querySelector(".fa-microphone").classList.add("fa-play");
+        }
+        clearInterval(intervallId);
+        playing == false;
+    }
+
+
+    function playMix(): void{
+        if (playing == false){
+            playBeat();
+        }
+        else {
+            mixer();
+        }
+    }
+    
+    function playThis(soundQuelle: string): void {
+        const sound: HTMLAudioElement = new Audio(soundQuelle);
+        sound.play()
+    }
+
+    function playBeat(): void {
+        intervall = setInterval(function (): void {
+            playThis(beat[zaehler]);
+            console.log("test");
+            zaehler++;
+            if (zaehler === 3) {
+                zaehler = 0;
+            }
+        }, 500);
+    }
+
     function playSample(sound) {
 
         sound.play()
     }
 
+ 
+    
     document.querySelector(".pad-1").addEventListener("click", function () {
         playSample(sound1)
     })
@@ -43,14 +115,6 @@ namespace Aufgabe9 {
     document.querySelector(".pad-9").addEventListener("click", function () {
         playSample(sound9)
     })
-
-
-
-    var beat: string[] = [("./DrumPad/kick.mp3"), ("./DrumPad/hihat.mp3"), ("./DrumPad/snare.mp3")]
-
-    var zaehler: number = 0;
-
-
     document.querySelector(".fa-play").addEventListener("click", function () {
         playBeat()
         document.querySelector('.fa-stop').classList.remove('hidden')
@@ -63,39 +127,18 @@ namespace Aufgabe9 {
         clearInterval(intervall)
     })
 
-    function playThis(soundQuelle: string): void {
-        const sound: HTMLAudioElement = new Audio(soundQuelle);
-        sound.play()
-    }
-
-    function playBeat(): void {
-        intervall = setInterval(function (): void {
-            playThis(beat[zaehler]);
-            console.log("test");
-            zaehler++;
-            if (zaehler === 3) {
-                zaehler = 0;
-            }
-        }, 500);  
+    document.querySelector('.fa-microphone').addEventListener("click", function () { 
+       remix()
        
-
-    }
-
- 
+    });
 
 
+   
 
 
-    let myArray = [(sound5), (sound6), (sound9)]
 
-    document.querySelector(".fa-microphone").addEventListener("click", function () {
-        
-       for (var i = 0; i < 4; i++) {
-            let number: number = Math.random ();
-            (console.log (myArray))
-            myArray.push (myArray [number]);
-        }
-    })
+
+
 
 
 }
@@ -109,32 +152,5 @@ namespace Aufgabe9 {
 
 
 
-//Zum Verständnis (für mich)
-
-//let myArray []
-//const myArray= []
-//const number = math.random...
-//for (i=0, i<4,i++){
-//    const number= Mathrandom...
-//    myArray.push (number);
-//    (code ausführen)
-//}
-//myArray (3,2,1)
-
-//variable setInterval geben, setIntervall namen geben, mit clearIntervall setIntervall ansprechen
 
 
-//classList.add ()
-//fügt der ClassList eine neue Klasse hinzu
-
-//classList.remove ()
-//entfernt eine Klasse aus der classList, ohne die übrigen Klassen zu beeinflussen.
-
-//mit hidden arbeiten
-
-
-//classList.toggle ()
-//toggelt eine Klasse in die classList bzw. hinaus. Beim ersten Aufruf wird die Klasse eingeschaltet, beim zweiten Aufruf wird die Klasse entfernt.
-
-//classList.length
-//gibt die Zahl der Klassen in der classList an
