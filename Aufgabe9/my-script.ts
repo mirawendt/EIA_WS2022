@@ -83,7 +83,7 @@ namespace Aufgabe9 {
         playSample(sound9)
     });
 
-    playBtn.addEventListener('click', function(){
+    playBtn.addEventListener('click', function (){
         if (playing === true) {
             playing = false
             playI.classList.remove('hidden')
@@ -105,9 +105,9 @@ namespace Aufgabe9 {
         }
     });
 
-    remixI.addEventListener('click', function(){
+    remixI.addEventListener('click', function() {
         let remix: HTMLAudioElement[] = []
-        for (let index = 0, index: any < 3; index++) {
+        for (let index = 0; index < 3; index++) {
             const randomNumber: Number = Math.round(Math.random()*9)
             remix.push(allSounds[randomNumber.toString()])
         }
