@@ -84,7 +84,7 @@ var Aufgabe9;
                 if (i === 3) {
                     i = 0;
                 }
-            }, 1000);
+            }, 500);
         }
     });
     remixI.addEventListener('click', function () {
