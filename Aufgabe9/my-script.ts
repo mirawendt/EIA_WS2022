@@ -9,102 +9,50 @@ namespace Aufgabe9 {
     const sound7: HTMLAudioElement = new Audio('./DrumPad/laugh-1.mp3');
     const sound8: HTMLAudioElement = new Audio('./DrumPad/laugh-2.mp3');
     const sound9: HTMLAudioElement = new Audio('./DrumPad/snare.mp3');
-    let intervall;
 
+    const pad1: HTMLElement = document.querySelector('.pad-1');
+    const pad2: HTMLElement = document.querySelector('.pad-2');
+    const pad3: HTMLElement = document.querySelector('.pad-3');
+    const pad4: HTMLElement = document.querySelector('.pad-4');
+    const pad5: HTMLElement = document.querySelector('.pad-5');
+    const pad6: HTMLElement = document.querySelector('.pad-6');
+    const pad7: HTMLElement = document.querySelector('.pad-7');
+    const pad8: HTMLElement = document.querySelector('.pad-8');
+    const pad9: HTMLElement = document.querySelector('.pad-9');
 
-
-    var playing: boolean = false;
-    var beat: string[] = [("./DrumPad/kick.mp3"), ("./DrumPad/hihat.mp3"), ("./DrumPad/snare.mp3")]
-    var alleToene: string[] = [
-        "./DrumPad/A.mp3",
-        "./DrumPad/C.mp3",
-        "./DrumPad/F.mp3",
-        "./Drumpad/G.mp3",
-        "./DrumPad/hihat.mp3",
-        "./DrumPad/kick.mp3",
-        "./DrumPad/laugh-1.mp3",
-        "./DrumPad/laugh-2.mp3",
-        "./DrumPad/snare.mp3",
+    const playBtn: HTMLElement = document.querySelector('#playBtn');
+    const remixI: HTMLElement = document.querySelector('#remixI');
+    
+    const allSounds: HTMLElement[] = 
+    [
+        sound1,
+        sound2,
+        sound3,
+        sound4,
+        sound5,
+        sound6,
+        sound7,
+        sound8,
+        sound9
     ]
-    var zaehler: number = 0;
-    var intervallId: number;
+    let intervallId: number;
+
+    let playI: HTMLElement = document.querySelector('#playI');
+    let stopI: HTMLElement = document.querySelector('#stopI');
+
+    let beat: HTMLAudioElement [] = [sound5, sound6, sound9];
+    let playing: boolean = false;
 
     
-    function remix(): void {
-        playing = true;
-        var zaehler: number = 0;
-        var toeneTotal: number = 3;
-        let i: number = 0;
-        while (i < toeneTotal) {
-            var item: string = alleToene[Math.floor(Math.random() * alleToene.length)];
-            alleToene.push(item);
-            i = i + 1;
-        }
-    }
-
-    function playThis(soundQuelle: string): void {
-        const sound: HTMLAudioElement = new Audio(soundQuelle);
-        sound.play()
-    }
-
-    function playBeat(): void {
-        intervall = setInterval(function (): void {
-            playThis(beat[zaehler]);
-            console.log("test");
-            zaehler++;
-            if (zaehler === 3) {
-                zaehler = 0;
-            }
-        }, 500);
-    }
-
-    function playSample(sound) {
-
-        sound.play()
-    }
 
 
     
-    document.querySelector(".pad-1").addEventListener("click", function () {
-        playSample(sound1)
-    })
-    document.querySelector(".pad-2").addEventListener("click", function () {
-        playSample(sound2)
-    })
-    document.querySelector(".pad-3").addEventListener("click", function () {
-        playSample(sound3)
-    })
-    document.querySelector(".pad-4").addEventListener("click", function () {
-        playSample(sound4)
-    })
-    document.querySelector(".pad-5").addEventListener("click", function () {
-        playSample(sound5)
-    })
-    document.querySelector(".pad-6").addEventListener("click", function () {
-        playSample(sound6)
-    })
-    document.querySelector(".pad-7").addEventListener("click", function () {
-        playSample(sound7)
-    })
-    document.querySelector(".pad-8").addEventListener("click", function () {
-        playSample(sound8)
-    })
-    document.querySelector(".pad-9").addEventListener("click", function () {
-        playSample(sound9)
-    })
-    document.querySelector(".fa-play").addEventListener("click", function () {
-        playBeat()
-        document.querySelector('.fa-stop').classList.remove('hidden')
-        document.querySelector('.fa-play').classList.add('hidden')
-    })
 
-    document.querySelector(".fa-stop").addEventListener("click", function () {
-        document.querySelector('.fa-play').classList.remove('hidden')
-        document.querySelector('.fa-stop').classList.add('hidden')
-        clearInterval(intervall)
-    })
 
-    document.querySelector(".fa-microphone").addEventListener("click", function (): void { remix(); });
+
+
+
+ 
 
 
 
