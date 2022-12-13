@@ -9,87 +9,91 @@ var Aufgabe9;
     const sound7 = new Audio('./DrumPad/laugh-1.mp3');
     const sound8 = new Audio('./DrumPad/laugh-2.mp3');
     const sound9 = new Audio('./DrumPad/snare.mp3');
-    let intervall;
-    var playing = false;
-    var beat = [("./DrumPad/kick.mp3"), ("./DrumPad/hihat.mp3"), ("./DrumPad/snare.mp3")];
-    var alleToene = [
-        "./DrumPad/A.mp3",
-        "./DrumPad/C.mp3",
-        "./DrumPad/F.mp3",
-        "./Drumpad/G.mp3",
-        "./DrumPad/hihat.mp3",
-        "./DrumPad/kick.mp3",
-        "./DrumPad/laugh-1.mp3",
-        "./DrumPad/laugh-2.mp3",
-        "./DrumPad/snare.mp3",
+    const pad1 = document.querySelector('.pad-1');
+    const pad2 = document.querySelector('.pad-2');
+    const pad3 = document.querySelector('.pad-3');
+    const pad4 = document.querySelector('.pad-4');
+    const pad5 = document.querySelector('.pad-5');
+    const pad6 = document.querySelector('.pad-6');
+    const pad7 = document.querySelector('.pad-7');
+    const pad8 = document.querySelector('.pad-8');
+    const pad9 = document.querySelector('.pad-9');
+    const playBtn = document.querySelector('#playBtn');
+    const remixI = document.querySelector('#remixI');
+    const allSounds = [
+        sound1,
+        sound2,
+        sound3,
+        sound4,
+        sound5,
+        sound6,
+        sound7,
+        sound8,
+        sound9
     ];
-    var zaehler = 0;
-    var intervallId;
-    function remix() {
-        playing = true;
-        var zaehler = 0;
-        var toeneTotal = 3;
-        let i = 0;
-        while (i < toeneTotal) {
-            var item = alleToene[Math.floor(Math.random() * alleToene.length)];
-            alleToene.push(item);
-            i = i + 1;
-        }
-    }
-    function playThis(soundQuelle) {
-        const sound = new Audio(soundQuelle);
-        sound.play();
-    }
-    function playBeat() {
-        intervall = setInterval(function () {
-            playThis(beat[zaehler]);
-            console.log("test");
-            zaehler++;
-            if (zaehler === 3) {
-                zaehler = 0;
-            }
-        }, 500);
-    }
+    let intervallId;
+    let playI = document.querySelector('#playI');
+    let stopI = document.querySelector('#stopI');
+    let beat = [sound5, sound6, sound9];
+    let playing = false;
     function playSample(sound) {
         sound.play();
     }
-    document.querySelector(".pad-1").addEventListener("click", function () {
+    pad1.addEventListener('click', function () {
         playSample(sound1);
     });
-    document.querySelector(".pad-2").addEventListener("click", function () {
+    pad2.addEventListener('click', function () {
         playSample(sound2);
     });
-    document.querySelector(".pad-3").addEventListener("click", function () {
+    pad3.addEventListener('click', function () {
         playSample(sound3);
     });
-    document.querySelector(".pad-4").addEventListener("click", function () {
+    pad4.addEventListener('click', function () {
         playSample(sound4);
     });
-    document.querySelector(".pad-5").addEventListener("click", function () {
+    pad5.addEventListener('click', function () {
         playSample(sound5);
     });
-    document.querySelector(".pad-6").addEventListener("click", function () {
+    pad6.addEventListener('click', function () {
         playSample(sound6);
     });
-    document.querySelector(".pad-7").addEventListener("click", function () {
+    pad7.addEventListener('click', function () {
         playSample(sound7);
     });
-    document.querySelector(".pad-8").addEventListener("click", function () {
+    pad8.addEventListener('click', function () {
         playSample(sound8);
     });
-    document.querySelector(".pad-9").addEventListener("click", function () {
+    pad9.addEventListener('click', function () {
         playSample(sound9);
     });
-    document.querySelector(".fa-play").addEventListener("click", function () {
-        playBeat();
-        document.querySelector('.fa-stop').classList.remove('hidden');
-        document.querySelector('.fa-play').classList.add('hidden');
+    playBtn.addEventListener('click', function () {
+        if (playing === true) {
+            playing = false;
+            playI.classList.remove('hidden');
+            stopI.classList.add('hidden');
+            clearInterval(intervallId);
+        }
+        else {
+            playing = true;
+            playI.classList.add('hidden');
+            stopI.classList.remove('hidden');
+            let i = 0;
+            intervallId = setInterval(function () {
+                playSample(beat[i]);
+                i++;
+                if (i === 3) {
+                    i = 0;
+                }
+            }, 1000);
+        }
     });
-    document.querySelector(".fa-stop").addEventListener("click", function () {
-        document.querySelector('.fa-play').classList.remove('hidden');
-        document.querySelector('.fa-stop').classList.add('hidden');
-        clearInterval(intervall);
+    remixI.addEventListener('click', function () {
+        let remix = [];
+        for (let index = 0, index; ; index++) {
+            const randomNumber = Math.round(Math.random() * 9);
+            remix.push(allSounds[randomNumber.toString()]);
+        }
+        beat = remix;
     });
-    document.querySelector(".fa-microphone").addEventListener("click", function () { remix(); });
 })(Aufgabe9 || (Aufgabe9 = {}));
 //# sourceMappingURL=my-script.js.map

@@ -43,7 +43,77 @@ namespace Aufgabe9 {
     let beat: HTMLAudioElement [] = [sound5, sound6, sound9];
     let playing: boolean = false;
 
-    
+    function playSample(sound: HTMLAudioElement){
+        sound.play();
+    }
+
+    pad1.addEventListener('click', function (){
+        playSample(sound1)
+    });
+
+    pad2.addEventListener('click', function (){
+        playSample(sound2)
+    });
+
+    pad3.addEventListener('click', function (){
+        playSample(sound3)
+    });
+
+    pad4.addEventListener('click', function (){
+        playSample(sound4)
+    });
+
+    pad5.addEventListener('click', function (){
+        playSample(sound5)
+    });
+
+    pad6.addEventListener('click', function (){
+        playSample(sound6)
+    });
+
+    pad7.addEventListener('click', function (){
+        playSample(sound7)
+    });
+
+    pad8.addEventListener('click', function (){
+        playSample(sound8)
+    });
+
+    pad9.addEventListener('click', function (){
+        playSample(sound9)
+    });
+
+    playBtn.addEventListener('click', function(){
+        if (playing === true) {
+            playing = false
+            playI.classList.remove('hidden')
+            stopI.classList.add('hidden')
+            clearInterval(intervallId)
+        } else {
+            playing = true
+            playI.classList.add('hidden')
+            stopI.classList.remove('hidden')
+
+            let i = 0
+            intervallId = setInterval(function (){
+                playSample(beat[i])
+                i++;
+                if (i ===3){
+                    i = 0;
+                }
+            }, 1000);
+        }
+    });
+
+    remixI.addEventListener('click', function(){
+        let remix: HTMLAudioElement[] = []
+        for (let index = 0, index: any < 3; index++) {
+            const randomNumber: Number = Math.round(Math.random()*9)
+            remix.push(allSounds[randomNumber.toString()])
+        }
+        beat = remix
+    });
+
 
 
     
