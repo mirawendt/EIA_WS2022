@@ -89,7 +89,7 @@ var Aufgabe9;
     });
     remixI.addEventListener('click', function () {
         let remix = [];
-        for (let index = 0, index; ; index++) {
+        for (let index = 0; index < 3; index++) {
             const randomNumber = Math.round(Math.random() * 9);
             remix.push(allSounds[randomNumber.toString()]);
         }
