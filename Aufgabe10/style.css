@@ -9,25 +9,27 @@ main {
     margin: 0 auto;
     text-align: center;
 }
-@font-face{
-    font-family: Leaflets ;
-    src: url(Fonts/LEAFLETS.ttf);
-}
+
+
+
 h1 {
     text-align: center;
     font-size: 140px;
     font-weight: normal;
-    font-family: Leaflets; 
-color: rgb(0, 0, 0);
-margin:auto;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(0, 0, 0);
+    margin: auto;
 
 }
+
 #counter {
     color: rgb(149, 16, 16);
 }
+
 #open {
     color: rgb(100, 100, 100);
 }
+
 #done {
     color: rgb(0, 0, 0);
 }
@@ -37,6 +39,7 @@ margin:auto;
 .inputGroup {
     position: relative;
 }
+
 #inputTodo {
     background: rgb(207, 207, 207);
     font-size: 20px;
@@ -60,6 +63,7 @@ margin:auto;
     color: rgb(94, 93, 93);
     cursor: pointer;
 }
+
 #addButton:hover {
     color: black;
 }
@@ -86,11 +90,13 @@ margin:auto;
     width: 30px;
     height: 30px;
 }
+
 .check i {
     position: relative;
     left: 5px;
     top: 5px;
 }
+
 .check.false i {
     display: none;
 }
@@ -107,3 +113,7 @@ margin:auto;
     color: black;
 }
 
+
+* {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
