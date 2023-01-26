@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HTML, CSS, TypeScript Learning App</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="./my-script.js"></script>
+  </head>
+  <body>
+    <div id="header">
+      <h1>HTML, CSS, TypeScript Learning App</h1>
+      <div id="score">Score: <span id="score-value">0</span></div>
+    </div>
+    <div id="categories">
+      <h2>Select a category:</h2>
+      <button id="html" onclick="loadCategory('HTML')">HTML</button>
+      <button id="css" onclick="loadCategory('CSS')">CSS</button>
+      <button id="typescript" onclick="loadCategory('TypeScript')">TypeScript</button>
+      <button id="mixed" onclick="loadCategory('Mixed')">Mixed</button>
+    </div>
+    <div id="quiz" style="display: none;">
+      <div id="question"></div>
+      <form id="answer-form">
+        <div id="answers"></div>
+      </form>
+      <div id="feedback" style="display: none;"></div>
+      <div id="explanation" style="display: none;"></div>
+      <button id="next" onclick="nextQuestion()" style="display: none;">Next</button>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
